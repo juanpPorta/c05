@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:23:02 by jporta            #+#    #+#             */
-/*   Updated: 2021/07/08 16:48:30 by jporta           ###   ########.fr       */
+/*   Updated: 2021/07/11 16:24:24 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,19 @@
 
 int	ft_sqrt(int nb)
 {
-	int	nb_num;
-	int	i;
+	int	n;
 
-	i = 1;
-	nb_num = nb;
-	if (nb < 1)
-		return (0);
-	while (nb_num <= nb)
-	{	
-		nb_num = i * i;
-		if (nb_num == nb)
-			return (i);
-		else
-			i++;
+	n = 1;
+	if (nb > 0)
+	{
+		while (n * n <= nb)
+		{
+			if (n * n == nb)
+				return (n);
+			else if (n >= 46341)
+				return (0);
+			n++;
+		}
 	}
 	return (0);
 }
